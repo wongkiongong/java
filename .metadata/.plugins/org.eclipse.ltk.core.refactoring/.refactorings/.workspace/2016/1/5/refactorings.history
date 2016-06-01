@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;HelloWS&apos;" deleteContents="true" description="Delete resource &apos;HelloWS&apos;" element1="/HelloWS" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1453886848118"/>&#x0A;<refactoring comment="Rename resource &apos;HelloWS&apos; to &apos;AutoMailSender&apos;" description="Rename resource &apos;HelloWS&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/HelloWS" name="AutoMailSender" stamp="1453972176910" updateReferences="true"/>
+</session>

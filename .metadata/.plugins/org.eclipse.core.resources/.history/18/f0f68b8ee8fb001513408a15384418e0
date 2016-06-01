@@ -1,0 +1,11 @@
+package com.onecloud.huangqg;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class JSoupCollector {
+
+	public static void main(String arg,int args[]){
+		Document doc = Jsoup.connect("http://www.icbc.com.cn/ICBCDynamicSite/Charts/GoldTendencyPicture.aspx").get();
+	}
+}

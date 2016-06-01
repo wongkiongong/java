@@ -1,0 +1,5 @@
+package com.angela.util.others;
+
+public class MailUtil {
+
+}

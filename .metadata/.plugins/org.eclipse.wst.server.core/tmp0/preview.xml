@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="HelloWS" name="HelloWS" path="/home/huangqg/eclipse-mar/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/HelloWS" type="j2ee"/>
+</server>

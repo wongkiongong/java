@@ -1,0 +1,5 @@
+package com.angela.server.impl;
+
+public class MailServiceImpl {
+
+}

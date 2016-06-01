@@ -1,0 +1,8 @@
+package com.onecloud.huangqg;
+
+public class JSoupCollector {
+
+	public static void main(String arg,int args[]){
+		
+	}
+}

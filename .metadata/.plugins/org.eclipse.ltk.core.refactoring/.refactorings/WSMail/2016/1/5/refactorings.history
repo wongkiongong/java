@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.angela.bin.Tmp.java&apos; to &apos;MailBean.java&apos;&#x0A;- Original project: &apos;WSMail&apos;&#x0A;- Original element: &apos;com.angela.bin.Tmp.java&apos;&#x0A;- Renamed element: &apos;com.angela.bin.MailBean.java&apos;" description="Rename compilation unit &apos;Tmp.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.angela.bin{Tmp.java" name="MailBean.java" references="false" stamp="1453876528393" version="1.0"/>
+</session>

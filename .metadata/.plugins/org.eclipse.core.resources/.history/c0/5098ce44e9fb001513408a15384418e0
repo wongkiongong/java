@@ -1,0 +1,42 @@
+package com.onecloud.huangqg;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
+
+public class JSoupCollector {
+
+	public static void main(String arg,int args[]){
+		try {
+			Document doc = Jsoup.connect("http://www.icbc.com.cn/ICBCDynamicSite/Charts/GoldTendencyPicture.aspx").get();
+			Element table = doc.getElementById("TABLE1");
+			
+            Element tbodyNode = table.child(0);
+            String body = tbodyNode.data();
+            String text = tbodyNode.html();
+            if(tbodyNode != null) {
+//            	List<Node> trsNodes = tbodyNode.childNodes();
+                for (int i = 0; i < tbodyNode.childNodeSize(); i++) {
+                    //Node trnode = (Node) trsNodes.elementAt(i);
+                    
+                    Node trnode = tbodyNode.childNode(i);
+                    if("品种".equals(trnode.childNode(0).outerHtml())){
+//                    	NodeList tdNodes = trnode.getChildren();
+                    	for(int j=0; j < trnode.childNodeSize(); j ++){
+                    		System.out.println(j + trnode.childNode(i).outerHtml());
+                            System.out.println("=================================================");
+                    	}
+                    	 
+                    }
+                }
+            } 
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

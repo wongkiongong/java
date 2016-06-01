@@ -1,0 +1,42 @@
+package com.huangqg.email;
+
+import java.util.Properties;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
+
+public class MailSender {
+
+	// test sending email from wongkiongong@163.com to huangqg@onecloud.cn
+	public static void main(String[] args) throws MessagingException {
+
+		String host = "smtp.gmail.com";
+		int port = 587;
+		String username = "zuidaima";
+		String password = "zuidaima.com";
+
+		Properties javaMailProperties = new Properties();
+		javaMailProperties.put("mail.smtp.auth", "true");
+		javaMailProperties.put("mail.smtp.starttls.enable", "true");
+		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+		mailSender.setHost(host);
+		mailSender.setPort(port);
+		mailSender.setUsername(username);
+		mailSender.setPassword(password);
+		mailSender.setJavaMailProperties(javaMailProperties);
+		String email = "zuidaima@gmail.com";
+		String nickname = "最代码";
+
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper help = new MimeMessageHelper(message, true, "UTF-8");
+		help.setFrom("zuidaima@gmail.com");
+		help.setTo(new String[] { "zuidaima2@gmail.com", email });
+		help.setSubject("测试");
+		String content = "你好" + nickname;
+		help.setText(content, true);
+		mailSender.send(message);
+	}
+
+}
