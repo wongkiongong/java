@@ -1,0 +1,4 @@
+ interface BusinessFoo
+ {
+     void foo();
+ }
