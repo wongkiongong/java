@@ -1,6 +1,7 @@
 package com.huangqg.test;
 
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -32,10 +33,38 @@ public class Test {
         try {
 //        User user = (User) session.selectOne("com.huangqg.mybatis.models.UserMapper.selectUserByID", 1);
           IUserOperation userOperation = session.getMapper(IUserOperation.class);
+          
+          // query one record
           User user = userOperation.selectUserByID(1);
+
           System.out.println(user.getUserAddress());
           System.out.println(user.getUserName());
           System.out.println(user.getUserAge());
+          
+          // query list
+          List<User> users = userOperation.selectUserName("su%");
+          for(User u : users){
+        	  System.out.println("name:" + u.getUserName() + "; Age:" + u.getUserAge()
+        	  + "; Address:" + u.getUserAddress()); 
+          }
+          
+          // add record
+//          User usr = new User();
+//          usr.setUserName("huangqg");
+//          usr.setUserAge(32);
+//          usr.setUserAddress("poly garden");
+//          userOperation.addUser(usr);
+//          session.commit();
+          
+          // update record
+          user.setUserAge(23);
+          userOperation.updateUser(user);
+          session.commit();
+          
+          // delete record
+          userOperation.deleteUser(4);
+          session.commit();
+          
         } finally {
         session.close();
         }
